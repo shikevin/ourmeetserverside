@@ -31,9 +31,9 @@ if (isset($_GET["pid"])) {
 			$location["updated_at"] = $result["updated_at"];
 
 			$location["success"] = 1;
-			$location["product"] = array();
+			$location["location"] = array();
 
-			array_push($response["product"], $location);
+			array_push($response["location"], $location);
 
 			echo json_encode($response);
 
