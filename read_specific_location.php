@@ -5,14 +5,6 @@ $response = array ();
 require_once __DIR__ . '/db_connect.php';
 $db = new DB_CONNECT();
 
-
-if ($_GET['pid']==="") echo "pid is an empty string \n";
-if($_GET["pid"] === false) echo "a is false\n";
-if($_GET["pid"] === null) echo "a is null\n";
-if(isset($_GET["pid"])) echo "a is set\n";
-if(!empty($_GET["pid"])) echo "a is not empty";
-
-
 if (isset($_GET["pid"])) {
 	$pid=$_GET['pid'];
 	echo $pid;
@@ -30,8 +22,8 @@ if (isset($_GET["pid"])) {
 			$location["created_at"] = $result["created_at"];
 			$location["updated_at"] = $result["updated_at"];
 
-			$location["success"] = 1;
-			$location["location"] = array();
+			$response["success"] = 1;
+			$response["location"] = array();
 
 			array_push($response["location"], $location);
 
