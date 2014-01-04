@@ -5,7 +5,6 @@ $response = array ();
 require_once __DIR__ . '/db_connect.php';
 $db = new DB_CONNECT();
 
-print_r($_GET);
 
 if ($_GET['pid']==="") echo "pid is an empty string \n";
 if($_GET["pid"] === false) echo "a is false\n";
@@ -15,9 +14,8 @@ if(!empty($_GET["pid"])) echo "a is not empty";
 
 
 if (isset($_GET["pid"])) {
-	echo "pid is" .htmlspecialchars($_GET['$pid']) . '.';
 	$pid=$_GET['pid'];
-	
+	echo $pid;
 	$result = mysql_query("SELECT *FROM users WHERE pid= '.$pid.'");
 
 
