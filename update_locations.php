@@ -12,17 +12,17 @@ if (isset($_POST['pid'])&&isset($_POST['la']) && isset ($_POST['lo'])) {
 	$result=mysql_query("INSERT INTO users (pid, la, lo) VALUES ('$pid', '$la', $'lo') ON DUPLICATE KEY UPDATE la = VALUES ('$la'), lo = VALUES('$lo');
 
 	if ($result) {
-		$response["success"] = 1;
-		$response["message"] = "Location successfully updated";
+		$response['success'] = 1;
+		$response['message'] = "Location successfully updated";
 		echo json_encode($response);
 	} else {
-		$response["success"] = 0;
-		$response["message"] = "Oops! An error occured.";
+		$response['success'] = 0;
+		$response['message'] = "Oops! An error occured.";
 		echo json_encode($response);
 	}
 } else {
-	$response["success"]=0;
-	$response["message"] = "Required field(s) is missing";
+	$response['success']=0;
+	$response['message'] = "Required field(s) is missing";
 	echo json_encode($response);
 }
 ?>
