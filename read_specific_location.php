@@ -5,10 +5,19 @@ $response = array ();
 require_once __DIR__ . '/db_connect.php';
 $db = new DB_CONNECT();
 
-if (isset($_POST["pid"])) {
-	$pid=$_POST['pid'];
+print_r($_GET);
+
+if ($_GET['pid']==="") echo "pid is an empty string \n";
+if($_GET["pid"] === false) echo "a is false\n";
+if($_GET["pid"] === null) echo "a is null\n";
+if(isset($_GET["pid"])) echo "a is set\n";
+if(!empty($_GET["pid"])) echo "a is not empty";
+
+if (isset($_GET["pid"])) {
+	$pid=$_GET['pid'];
 	
-	$result = mysql_query("SELECT *FROM users WHERE pid= ".$pid."");
+	$result = mysql_query("SELECT *FROM users WHERE pid= '.$pid.'");
+
 
 	if(!empty($result)) {
 		if(mysql_num_rows($result)>0) {
