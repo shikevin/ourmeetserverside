@@ -8,7 +8,7 @@ $db = new DB_CONNECT();
 if (isset($_GET["pid"])) {
 	$pid=$_GET['pid'];
 	
-	$result = mysql_query("SELECT *FROM users WHERE pid=$pid");
+	$result = mysql_query("SELECT *FROM users WHERE pid= ".$pid."");
 
 	if(!empty($result)) {
 		if(mysql_num_rows($result)>0) {
