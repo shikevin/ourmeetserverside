@@ -13,7 +13,9 @@ if($_GET["pid"] === null) echo "a is null\n";
 if(isset($_GET["pid"])) echo "a is set\n";
 if(!empty($_GET["pid"])) echo "a is not empty";
 
+
 if (isset($_GET["pid"])) {
+	echo "pid is" .$pid . '.';
 	$pid=$_GET['pid'];
 	
 	$result = mysql_query("SELECT *FROM users WHERE pid= '.$pid.'");
