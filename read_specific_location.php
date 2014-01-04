@@ -16,7 +16,7 @@ if(!empty($_GET["pid"])) echo "a is not empty";
 if (isset($_GET["pid"])) {
 	$pid=$_GET['pid'];
 	echo $pid;
-	$result = mysql_query("SELECT *FROM users WHERE pid= '.$pid.'");
+	$result = mysql_query("SELECT * FROM users WHERE pid= $pid");
 
 
 	if(!empty($result)) {
@@ -41,13 +41,13 @@ if (isset($_GET["pid"])) {
 		else {
 
 			$response["success"] = 0;
-			$response["message"] = "No product found";
+			$response["message"] = "No product found 2";
 			echo json_encode($response);
 		}
 	}
 	else {
 		$response["success"] = 0;
-		$response["message"] = "No product found";
+		$response["message"] = "No product found 1";
 		echo json_encode($response);
 
 } 
