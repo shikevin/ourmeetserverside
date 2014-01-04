@@ -28,22 +28,27 @@ if (isset($_GET["pid"])) {
 
 			echo json_encode($response);
 
-		} else {
+		} 
+		else {
 
 			$response["success"] = 0;
 			$response["message"] = "No product found";
 			echo json_encode($response);
 		}
-	} else {
+	}
+	else {
 		$response["success"] = 0;
 		$response["message"] = "No product found";
 		echo json_encode($response);
 
-} else {
+} 
+}
+else {
 
 	$response["success"] = 0;
 	$response["message"] = "Required field(s) is missing";
 
 	echo json_encode($response);
 }
+
 ?>
