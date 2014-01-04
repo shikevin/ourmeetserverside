@@ -9,8 +9,7 @@ if (isset($_POST['pid'])&&isset($_POST['la']) && isset ($_POST['lo'])) {
 
 	require_once __DIR__ . '/db_connect.php';
 	$db = new DB_CONNECT();
-	$result=mysql_query("INSERT INTO users (pid, la, lo) VALUES ('$pid', '$la', '$lo')");
-	 //ON DUPLICATE KEY UPDATE la = VALUES ('$la'), lo = VALUES('$lo')");
+	$result=mysql_query("INSERT INTO users (pid, la, lo) VALUES ('$pid', '$la', '$lo') ON DUPLICATE KEY UPDATE la = VALUES ('$la'), lo = VALUES('$lo')");
 
 	if ($result) {
 		$response['success'] = 1;
