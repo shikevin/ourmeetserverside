@@ -5,8 +5,8 @@ $response = array ();
 require_once __DIR__ . '/db_connect.php';
 $db = new DB_CONNECT();
 
-if (isset($_GET["pid"])) {
-	$pid=$_GET['pid'];
+if (isset($_POST["pid"])) {
+	$pid=$_POST['pid'];
 	
 	$result = mysql_query("SELECT *FROM users WHERE pid= ".$pid."");
 
