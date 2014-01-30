@@ -1,0 +1,28 @@
+<?php
+$db_server = 'benhudson.ipagemysql.com';
+$db_user = 'ben';
+$db_password = 'bleuet';
+$db = 'findme_prod';
+
+$NO_CONNECTION = -0x01;
+$HTTP_POST_ERROR = 0x00;
+$DB_ERROR = 0x01;
+$QUERY_ERROR = 0x02;
+$SUCCESS = 0x03;
+$USERNAME_TAKEN = 0x04;
+$EMAIL_TAKEN = 0x05;
+$INVALID_CREDENTIALS = 0x06;
+$RESET_FAIL = 0x07;
+$NO_EMAIL_EXISTS = 0x08;
+$ADDED_REQUEST = 0x09;
+$INVALID_REQUEST = 0x0A;
+$NO_USER_EXISTS = 0x0B;
+$REQUEST_EXPIRED = 0x0C;
+$DECLINED_REQUEST = 0x0D;
+$ADDED_FRIEND = 0x0E;
+$ADDED_SESSION = 0x0F;
+$SESSION_EXISTS = 0x10;
+$CONNECTED = 0x11;
+$DELETED_FRIEND = 0x12;
+$DELETED_SESSION = 0x13;
+?>
